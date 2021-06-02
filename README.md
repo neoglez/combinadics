@@ -9,3 +9,38 @@ Code is a commented python implementation of [James McCaffrey' concepts](https:/
 Note that in the original article the author claims that the combinations he
 presents are in lexicographic order, which is not true. However, both his
 discussion and code are correct.
+
+## Installation
+
+```python
+pip install combinadics
+```
+
+## Use
+
+```python
+from combinadics import Choose, Combination
+
+combinations = Choose(5,3)
+print("Choose(5,3) results in {} combinations".format(combinations))
+
+combination = Combination(5,3)
+
+print("Combination(5, 3) is initially {}".format(Combination(5,3)))
+
+print("The lexicographic successor of combination {} is {}".format(
+    combination, combination.Successor()
+    ))
+
+print("Now we set the combination data to be {0 3 4}")
+```
+outputs
+```
+Choose(5,3) results in 10 combinations
+Combination(5, 3) is initially {0 1 2}
+The lexicographic successor of combination {0 1 2} is {0 1 3}
+Now we set the combination data to be {0 3 4}
+The lexicographic successor of combination {0 3 4} is {1 2 3}
+The rank of combination {2 3 4} is 9
+In position 3 we find combination {0 2 3}
+```
