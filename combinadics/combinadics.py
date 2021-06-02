@@ -4,11 +4,15 @@
 Created on Wed May 26 13:33:53 2021
 
 @author: neoglez
-Code is a commented python implementaion of James McCaffrey' concepts in:
-        https://docs.microsoft.com/en-us/archive/msdn-magazine/2004/july/using-combinations-to-improve-your-software-test-case-generation
+Code is a commented python implementaion of James McCaffrey' concepts of
+1. Generating combinations through generating combination successors.
+2. Ranking.
+and (not explicit in McCaffrey' article)
+3. Unranking.
+https://docs.microsoft.com/en-us/archive/msdn-magazine/2004/july/using-combinations-to-improve-your-software-test-case-generation 
 Note that in the original article the author claims that the combinations he
-presents are in lexicographic order, which is not true. However, both the
-# discussion and code are correct.
+presents are in lexicographic order, which is not true. However, both his
+discussion and code are correct.
 """
 
 def Choose(n, k):
@@ -320,7 +324,6 @@ class Combination:
   
         for i in range(self.k):
             x = x + Choose(ans[i], self.k - i)
-        print("x is {}".format(x))
             
 
         # x is the "dual" of m, duals sum to Choose(n,k) - 1
@@ -352,13 +355,13 @@ if __name__ == "__main__":
     
     
     combination = Combination(5, 3, [2, 3, 4])
-    print("The rank of combination {} is {}".format(
+    print("Ranking: The rank of combination {} is {}".format(
         combination, combination.Rank()
         ))
     
     combination = Combination(5, 3)
     position = 3
-    print("In position {} we find combination {}".format(
+    print("Unranking: in position {} we find combination {}".format(
         position, combination.Element(position)
         ))
     
