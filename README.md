@@ -33,7 +33,25 @@ print("The lexicographic successor of combination {} is {}".format(
     ))
 
 print("Now we set the combination data to be {0 3 4}")
+
+combination.data = [0, 3, 4]
+print("The lexicographic successor of combination {} is {}".format(
+    combination, combination.Successor()
+    ))
+
+
+combination = Combination(5, 3, [2, 3, 4])
+print("The rank of combination {} is {}".format(
+    combination, combination.Rank()
+    ))
+
+combination = Combination(5, 3)
+position = 3
+print("In position {} we find combination {}".format(
+    position, combination.Element(position)
+    ))
 ```
+
 outputs
 ```
 Choose(5,3) results in 10 combinations
