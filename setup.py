@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
      name='combinadics',  
-     version='0.0.2',
+     version='0.0.3',
      author="Yansel Gonzalez Tejeda",
      author_email="neoglez@gmail.com",
      description="Combinatorial system of degree k ranking and unranking.",
