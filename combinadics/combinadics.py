@@ -155,7 +155,7 @@ class Combination:
         self.n = n
         self.k = k
         
-        if (a and k != len(a)):
+        if (a is not None and k != len(a)):
             raise Exception("Array length does not equal k");
         
         self.data = []
